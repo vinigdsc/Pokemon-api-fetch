@@ -19,13 +19,11 @@ btn.addEventListener("click", function (e) {
       document.getElementById("numero").innerHTML = `Numero : ${data["id"]}`;
 
       document.getElementById("tipo").innerHTML = "tipo: ";
-      data["types"].forEach((type1) => {
-        //document.getElementById("tipo").innerHTML += " " + type1.type.name;
-        let tipex = data["types"]["0"]["type"].name;
-        let tipey = data["types"]["1"]["type"].name;
-        document.getElementById("tipo1").innerText = tipex;
-        document.getElementById("tipo2").innerText = tipey;
-      });
+
+      let tipex = data["types"]["0"]["type"].name;
+      let tipey = data["types"]["1"]["type"].name;
+      document.getElementById("tipo1").innerText = tipex;
+      document.getElementById("tipo2").innerText = tipey;
 
       let img = data["sprites"]["front_default"];
       document.getElementById("pic").setAttribute("src", img);

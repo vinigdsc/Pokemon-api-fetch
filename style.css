@@ -33,3 +33,19 @@ div#container {
   border: 1px solid black;
   margin-right: 50%;
 }
+
+#input {
+  width: 200px;
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+#btn1,
+#btn2 {
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+}

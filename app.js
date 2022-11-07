@@ -15,13 +15,16 @@ btn.addEventListener("click", function (e) {
     })
     .then((data) => {
       //o que fazer com o Json
-      //console.log(data);
       document.getElementById("nome").innerHTML = `Nome: ${data["name"]}`;
       document.getElementById("numero").innerHTML = `Numero : ${data["id"]}`;
 
       document.getElementById("tipo").innerHTML = "tipo: ";
       data["types"].forEach((type1) => {
-        document.getElementById("tipo").innerHTML += " " + type1.type.name;
+        //document.getElementById("tipo").innerHTML += " " + type1.type.name;
+        let tipex = data["types"]["0"]["type"].name;
+        let tipey = data["types"]["1"]["type"].name;
+        document.getElementById("tipo1").innerText = tipex;
+        document.getElementById("tipo2").innerText = tipey;
       });
 
       let img = data["sprites"]["front_default"];
@@ -34,7 +37,7 @@ btn.addEventListener("click", function (e) {
 
 btn2.addEventListener("click", function (random) {
   random.preventDefault();
-  value2 = Math.floor(Math.random() * (1000 - 1 + 1) + 1);
+  value2 = Math.floor(Math.random() * (900 - 1 + 1) + 1);
   console.log(value2);
   const url = `https://pokeapi.co/api/v2/pokemon/${value2}`;
   fetch(url)
@@ -54,5 +57,3 @@ btn2.addEventListener("click", function (random) {
 });
 
 document.getElementById("btn1").onclick = load();
-
-document.getElementById("tipo").innerHTML += " " + type1.type.name;

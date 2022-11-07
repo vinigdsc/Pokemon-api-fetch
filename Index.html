@@ -11,15 +11,23 @@
 
 <body>
   <div id="container">
-    <h2 id="nome">Nome</h2>
+    <h2 id="nome"></h2>
     <img id="pic">
-    <h3 id="numero">Numero</h3>
+    <h3 id="numero"></h3>
+    <h3 id="tipo"></h3>
+    <div id="stats-container">
+      <span id="tipo1"></span>
+      <span id="tipo2"></span>
+    </div>
   </div>
 
-  <form id="formulario">
-    <input type="text" id="input" placeholder="Escreva seu Pokemon">
-    <input value="enviar" type="submit" id="btn1"> </input>
+  <form class="formulario">
+    <p>Nome ou ID</p>
+    <input type="text" id="input" placeholder="Pokemon">
+    <input value="enter" type="submit" id="btn1"> </input>
+    <input id="btn2" type="button" value="random">
   </form>
+
 
 
   <script src="app.js" defer></script>

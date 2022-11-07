@@ -8,11 +8,28 @@ body {
 }
 
 div#container {
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   background-color: lightgrey;
   border-radius: 10px;
   box-shadow: 5px 5px 3px black;
   margin: 10% auto 10px;
   padding: 5px;
+}
+
+#stats-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#tipo1 {
+  width: 100px;
+  border: 1px solid black;
+  margin-left: 50%;
+}
+
+#tipo2 {
+  width: 100px;
+  border: 1px solid black;
+  margin-right: 50%;
 }

@@ -15,17 +15,22 @@ btn.addEventListener("click", function (e) {
     })
     .then((data) => {
       //o que fazer com o Json
+      document.getElementById("tipo1").innerHTML = "";
+      document.getElementById("tipo2").innerHTML = "";
       document.getElementById("nome").innerHTML = `Nome: ${data["name"]}`;
+      console.log(`Nome: ${data["name"]}`);
       document.getElementById("numero").innerHTML = `Numero : ${data["id"]}`;
-
       document.getElementById("tipo").innerHTML = "tipo: ";
 
-      let tipex = data["types"]["0"]["type"].name;
-      let tipey = data["types"]["1"]["type"].name;
-      document.getElementById("tipo1").innerText = tipex;
-      document.getElementById("tipo2").innerText = tipey;
+      let { types } = data;
+      let tipos = types.map(({ type }) => type);
+
+      for (let i = 1; i <= tipos.length; i++) {
+        document.getElementById(`tipo${i}`).innerText = tipos[i - 1].name;
+      }
 
       let img = data["sprites"]["front_default"];
+
       document.getElementById("pic").setAttribute("src", img);
     })
     .catch((erro) => {
@@ -47,10 +52,11 @@ btn2.addEventListener("click", function (random) {
       document.getElementById("numero").innerHTML = `Numero: ${data["id"]}`;
       let img = data["sprites"]["front_default"];
       document.getElementById("pic").setAttribute("src", img);
-      document.getElementById("tipo").innerHTML = "tipo: ";
-      data["types"].forEach((type1) => {
-        document.getElementById("tipo").innerHTML += " " + type1.type.name;
-      });
+      document.getElementById("tipo").innerHTML = "Tipo: ";
+      let tipex = data["types"]["0"]["type"].name;
+      let tipey = data["types"]["1"]["type"].name;
+      document.getElementById("tipo1").innerText = tipex;
+      document.getElementById("tipo2").innerText = tipey;
     });
 });
 

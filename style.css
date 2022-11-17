@@ -5,6 +5,7 @@
 html,
 body {
   text-align: center;
+  background-color: antiquewhite;
 }
 
 div#container {
@@ -32,6 +33,7 @@ div#container {
   width: 100px;
   border: 1px solid black;
   margin-right: 50%;
+  opacity: 1;
 }
 
 #input {
@@ -48,4 +50,16 @@ div#container {
   border-radius: 5px;
   font-weight: 600;
   cursor: pointer;
+}
+
+#pics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#pic1 {
+  margin-left: 50%;
+}
+#pic2 {
+  margin-right: 50%;
 }

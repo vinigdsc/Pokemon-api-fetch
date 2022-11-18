@@ -8,23 +8,24 @@ const btn2 = document.getElementById("btn2");
 
 var poketype = new Map();
 poketype.set("bug", "#ADFF2F");
-poketype.set("grass", "#00FF00");
-poketype.set("fairy", "#FF69B4");
-poketype.set("normal", "#F5F5F5");
-poketype.set("dragon", "#00008B");
-poketype.set("psychic", "#FF1493");
+poketype.set("grass", "#00FF7F");
+poketype.set("fairy", "#FFC0CB");
+poketype.set("normal", "#F5F5DC");
+poketype.set("dragon", "#4169E1");
+poketype.set("psychic", "#FF69B4");
 poketype.set("ghost", "#4B0082");
-poketype.set("earth", "#8B4513");
+poketype.set("earth", "#A52A2A");
 poketype.set("steel", "#708090");
 poketype.set("fire", "#FF8C00");
-poketype.set("flying", "#E6E6FA");
+poketype.set("flying", "#F0FFFF");
 poketype.set("ice", "#B0E0E6");
 poketype.set("electric", "#FFFF00");
 poketype.set("rock", "#EEE8AA");
+poketype.set("ground", "#A0522D");
 poketype.set("dark", "#363636");
 poketype.set("water", "#00BFFF");
 poketype.set("fighting", "#800000");
-poketype.set("poison", "#A020F0");
+poketype.set("poison", "#9400D3");
 
 function clicando(value) {
   const url = `https://pokeapi.co/api/v2/pokemon/${value}`;
@@ -34,23 +35,31 @@ function clicando(value) {
     })
     .then((data) => {
       //o que fazer com o Json
-      document.getElementById("tipo1").innerHTML = "";
-      document.getElementById("tipo1").style.backgroundColor = "";
-      document.getElementById("nome").innerHTML = `Nome: ${data["name"]}`;
-      console.log(`Nome: ${data["name"]}`);
+
+      document.getElementById("nome").innerHTML = `${data["name"]}`;
+
       document.getElementById("numero").innerHTML = `Numero : ${data["id"]}`;
-      document.getElementById("tipo").innerHTML = "tipo: ";
 
       // pegando o types, quebrando a array
       let { types } = data;
       let tipos = types.map(({ type }) => type);
 
       //pegando a quantidade de tipos da array, para cada tipo add o nome e o estilo de cor mapeado em poketype
+      document.getElementById("stats-container").innerHTML = "";
       for (let i = 0; i < tipos.length; i++) {
-        document.getElementById(`tipo${i}`).innerHTML = tipos[i].name;
-        document.getElementById(`tipo${i}`).style.backgroundColor =
-          poketype.get(tipos[i].name);
+        var span = document.createElement("span");
+        span.setAttribute("class", "tipos");
+        document.getElementById("stats-container").appendChild(span);
+        span.innerHTML = tipos[i].name;
+        span.style.backgroundColor = poketype.get(tipos[i].name);
       }
+
+      var color1 = poketype.get(tipos[0].name);
+      var color2 = poketype.get(tipos[tipos.length - 1].name);
+
+      document.getElementById(
+        "container"
+      ).style.backgroundImage = `linear-gradient(to bottom right, ${color1} 30%, ${color2} 70%)`;
 
       poketype.get(tipos);
 

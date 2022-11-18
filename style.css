@@ -7,33 +7,36 @@ body {
   text-align: center;
   background-color: antiquewhite;
 }
+div {
+  text-transform: capitalize;
+}
 
 div#container {
-  width: 400px;
+  width: 300px;
   height: 400px;
-  background-color: lightgrey;
+  border: 5px solid;
+  border-radius: 15px;
+  background-image: linear-gradient(to bottom right, gray, black);
   border-radius: 10px;
-  box-shadow: 5px 5px 3px black;
   margin: 10% auto 10px;
   padding: 5px;
 }
 
+#inset {
+  background-color: white;
+  border: 3px solid;
+  text-align: center;
+  margin: 2em 2em 0;
+}
+
 #stats-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: center;
 }
 
-#tipo0 {
+.tipos {
   width: 100px;
   border: 1px solid black;
-  margin-left: 50%;
-}
-
-#tipo1 {
-  width: 100px;
-  border: 1px solid black;
-  margin-right: 50%;
-  opacity: 1;
 }
 
 #input {
@@ -43,31 +46,10 @@ div#container {
   border-radius: 5px;
 }
 
-#btn1,
-#btn2 {
+.button {
   height: 30px;
   border: 2px solid black;
   border-radius: 5px;
   font-weight: 600;
   cursor: pointer;
-}
-
-#pics {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-#pic1 {
-  margin-left: 50%;
-}
-#pic2 {
-  margin-right: 50%;
-}
-
-.bug {
-  color: #adff2f;
-}
-
-.grass {
-  color: #00ff00;
 }

@@ -4,6 +4,26 @@ const btn = document.getElementById("btn1");
 
 const btn2 = document.getElementById("btn2");
 
+var poketype = new Map();
+poketype.set("bug", "#ADFF2F");
+poketype.set("grass", "#00FF00");
+poketype.set("fairy", "#FF69B4");
+poketype.set("normal", "#F5F5F5");
+poketype.set("dragon", "#00008B");
+poketype.set("psychic", "#FF1493");
+poketype.set("ghost", "#4B0082");
+poketype.set("earth", "#8B4513");
+poketype.set("steel", "#708090");
+poketype.set("fire", "#FF8C00");
+poketype.set("flying", "#E6E6FA");
+poketype.set("ice", "#B0E0E6");
+poketype.set("electric", "#FFFF00");
+poketype.set("rock", "#EEE8AA");
+poketype.set("dark", "#363636");
+poketype.set("water", "#00BFFF");
+poketype.set("fighting", "#800000");
+poketype.set("poison", "#A020F0");
+
 btn.addEventListener("click", function (e) {
   e.preventDefault();
   input = document.querySelector("#input");
@@ -28,6 +48,13 @@ btn.addEventListener("click", function (e) {
       for (let i = 1; i <= tipos.length; i++) {
         document.getElementById(`tipo${i}`).innerText = tipos[i - 1].name;
       }
+      for (let i = 1; i < tipos.length; i++) {
+        document.getElementById(`tipo${i}`).innerText = poketype.get(
+          tipos[i].name
+        );
+      }
+
+      poketype.get(tipos);
 
       let img = data["sprites"]["front_default"];
 

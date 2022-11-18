@@ -27,6 +27,7 @@ div#container {
   border: 3px solid;
   text-align: center;
   margin: 2em 2em 0;
+  visibility: hidden;
 }
 
 #stats-container {

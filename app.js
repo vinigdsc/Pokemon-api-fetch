@@ -66,6 +66,7 @@ function clicando(value) {
       let img = data["sprites"]["front_default"];
 
       document.getElementById("pic").setAttribute("src", img);
+      document.getElementById("inset").style.visibility = "visible";
     })
     .catch((erro) => {
       document.getElementById("nome").innerHTML = "Nome/ID Invalido";

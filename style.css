@@ -23,13 +23,13 @@ div#container {
   grid-template-columns: 1fr 1fr;
 }
 
-#tipo1 {
+#tipo0 {
   width: 100px;
   border: 1px solid black;
   margin-left: 50%;
 }
 
-#tipo2 {
+#tipo1 {
   width: 100px;
   border: 1px solid black;
   margin-right: 50%;
